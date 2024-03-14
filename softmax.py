@@ -10,10 +10,15 @@ class Softmax:
     '''
         - input can be any array with any dimensions.
     '''
+    last_input_shape = input.shape
+    
     input = input.flatten()
+    last_input = input
 
     input_len, nodes = self.weights.shape
 
     totals = np.dot(input, self.weights) + self.biases
+    last_totals = totals
+    
     exp = np.exp(totals)
     return exp / np.sum(exp, axis=0)
