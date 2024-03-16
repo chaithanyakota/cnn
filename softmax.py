@@ -15,7 +15,7 @@ class Softmax:
     input = input.flatten()
     last_input = input
 
-    input_len, nodes = self.weights.shape
+    input_len, nodes = self.weights.shap
 
     totals = np.dot(input, self.weights) + self.biases
     last_totals = totals
